@@ -28,7 +28,7 @@
 
 
 function generatePassword(){
-  var password = " ";
+  var password = "";
   var length = prompt("How many characters? Min 8, Max 128");
   if(length <8 || length >128) {
     generatePassword()
@@ -37,38 +37,43 @@ function generatePassword(){
   var lowercase = confirm("Include Lower case Letters?");
   var numbers = confirm("Include Numbers?");
   var specialchar = confirm("Include Special Characters?");
+  var CombinedCharacters = []
 
+  
   if(uppercase === true) {
     var uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-    var randomUppercase = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length) ]
-    console.log(randomUppercase);
-  }
+    CombinedCharacters = uppercaseLetters.slice(0);
+  } else (uppercaseLetters = " ")
+
   if (lowercase === true) {
     var lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    var randomLowercase = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length) ]
-    console.log(randomLowercase)
-  }
+    CombinedCharacters = CombinedCharacters.concat(lowercaseLetters);
+  } else (lowercaseLetters = " ")
+
+
   if (numbers === true ){
     var numberlist = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-    var randomnumber = numberlist[Math.floor(Math.random() * numberlist.length)]
-    console.log(randomnumber)
-  } 
+    CombinedCharacters = CombinedCharacters.concat(numberlist);
+  } else(numberlist = " ") 
+
   if (specialchar === true){
     var specialcharList = ["!", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
-    var randomSpecialChart = specialcharList[Math.floor(Math.random() * specialcharList.length)]
-    console.log(randomSpecialChart)
-  }
+    CombinedCharacters = CombinedCharacters.concat(specialcharList);
+  } else (specialcharList = " ")
+  console.log(CombinedCharacters);
+
   if(uppercase !== true && lowercase !== true && numbers !== true && specialchar !== true){
     var pickAletter = confirm("Throw me a bone, Do you want a password or what?");
     if(pickAletter === true  || pickAletter !== true){
       generatePassword() 
     }
   }
-  for(var i = 0; i<=length; i++){
-    password = password+randomUppercase+randomLowercase+randomnumber+randomSpecialChart
-    console.log(passwordText)}
+  
+  for (var i = 0; i <= length - 1; i++) {
+    password = password + CombinedCharacters[Math.floor(Math.random() * CombinedCharacters.length)]; 
+  }
+  console.log(password);
 }
-
 
 ///////////////////////////////////////////////////////////////////////
 // DO NOT TOUCH THIS CODE
