@@ -37,12 +37,27 @@ function generatePassword(){
   var lowercase = confirm("Include Lower case Letters?");
   var numbers = confirm("Include Numbers?");
   var specialchar = confirm("Include Special Characters?");
+  
   if(uppercase === true) {
-    var uppercaseLetters = ["A","B","C","D","F","G"   ]
-    var ramdomUppercase = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length) ]
-    console.log(ramdomUppercase)
+    var uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    var randomUppercase = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length) ]
+    console.log(randomUppercase);
   }
-
+  if (lowercase === true) {
+    var lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    var randomLowercase = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length) ]
+    console.log(randomLowercase)
+  }
+  if (numbers === true ){
+    var numberlist = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+    var randomnumber = numberlist[Math.floor(Math.random() * numberlist.length)]
+    console.log(randomnumber)
+  } 
+  if (specialchar === true){
+    var specialcharList = ["!", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
+    var randomSpecialChart = specialcharList[Math.floor(Math.random() * specialcharList.length)]
+    console.log(randomSpecialChart)
+  }
 }
 
 
