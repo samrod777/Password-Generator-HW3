@@ -1,31 +1,6 @@
 ///////////////////////////////////////////////////////////////////////
 // PASSWORD GENERATOR
 //
-// * For this assignment, you will not be changing the HTML and CSS at all.
-//
-// * You will need a generatePassword function is called when the user
-//   clicks the Generate Password button.
-//
-// * You can create other functions that are called from within
-//   generatePassword
-//
-// * Gather user input with         prompt's and confirm's
-
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
-
 
 function generatePassword(){
   var password = "";
@@ -50,7 +25,6 @@ function generatePassword(){
     CombinedCharacters = CombinedCharacters.concat(lowercaseLetters);
   } else (lowercaseLetters = " ")
 
-
   if (numbers === true ){
     var numberlist = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
     CombinedCharacters = CombinedCharacters.concat(numberlist);
@@ -60,7 +34,6 @@ function generatePassword(){
     var specialcharList = ["!", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
     CombinedCharacters = CombinedCharacters.concat(specialcharList);
   } else (specialcharList = " ")
-  console.log(CombinedCharacters);
 
   if(uppercase !== true && lowercase !== true && numbers !== true && specialchar !== true){
     var pickAletter = confirm("Throw me a bone, Do you want a password or what?");
@@ -68,12 +41,14 @@ function generatePassword(){
       generatePassword() 
     }
   }
-  
+
   for (var i = 0; i <= length - 1; i++) {
     password = password + CombinedCharacters[Math.floor(Math.random() * CombinedCharacters.length)]; 
   }
-  console.log(password);
+  return password
+
 }
+
 
 ///////////////////////////////////////////////////////////////////////
 // DO NOT TOUCH THIS CODE
