@@ -37,7 +37,7 @@ function generatePassword(){
   var lowercase = confirm("Include Lower case Letters?");
   var numbers = confirm("Include Numbers?");
   var specialchar = confirm("Include Special Characters?");
-  
+
   if(uppercase === true) {
     var uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     var randomUppercase = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length) ]
@@ -58,6 +58,15 @@ function generatePassword(){
     var randomSpecialChart = specialcharList[Math.floor(Math.random() * specialcharList.length)]
     console.log(randomSpecialChart)
   }
+  if(uppercase !== true && lowercase !== true && numbers !== true && specialchar !== true){
+    var pickAletter = confirm("Throw me a bone, Do you want a password or what?");
+    if(pickAletter === true  || pickAletter !== true){
+      generatePassword() 
+    }
+  }
+  for(var i = 0; i<=length; i++){
+    password = password+randomUppercase+randomLowercase+randomnumber+randomSpecialChart
+    console.log(passwordText)}
 }
 
 
