@@ -1,8 +1,9 @@
 # Password-Generator-HW3
 
-Last updated 9/22/20
+Last updated 10/27/20
 
-```
+![Password Generator demo picture](Password-generator.png)
+
 INTRUDUCTION
 
 This is a random password generator project, it is designed to ask the user four questions to create a password from a minimum of 8 characters to a maximum of 128 characters.
